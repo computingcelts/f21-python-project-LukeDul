@@ -7,6 +7,7 @@ import cohstats.graphics as graphics
 import pprint
 
 def main():
+    print('test')
     print('***************************************************')
     print('building dictionaries')
     print('***************************************************')
