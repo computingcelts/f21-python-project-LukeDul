@@ -1,4 +1,5 @@
 # USE THIS SCRIPT BY MEMBER "A" OF YOUR TEAM TO TEST THE CODE
+# AKA Luke's test script
 import turtle
 import cohstats as cs
 import cohstats.stats as stats
