@@ -74,25 +74,31 @@ def read_file(file) :
 # this function has to be invoked only once in your entire code
 def builds_city_data(data) : # argument will be parser.input_data
     data_processed = {
-        'date' : [],
-        'time' : [],
-        'day_of_week' : [],
-        'hour_of_day' : [],
-        'neighborhood' : [],
-        'key_map' : [],
-        'district' : [],
-        'division' : [],
-        'serv_type' : [],
-        'queue' : [],
-        'wait' : [],
-        'days' : [],
-        'origin' : [],
+        'date': [],
+        'time': [],
+        'day_of_week': [],
+        'hour_of_day': [],
+        'neighborhood': [],
+        'key_map': [],
+        'district': [],
+        'division': [],
+        'serv_type': [],
+        'queue': [],
+        'wait': [],
+        'days': [],
+        'origin': [],
     }
 
-    index = 0
+    list_length = 0
     for n in data:
-        data_processed['date'].append(data[index])
-        index += 13
+         list_length += 1
+
+    # for n in range(1, list_length+1, 13):
+    #     for i in range(1, 14)
+    #
+    data_processed['date'].append(data[[n]])
+
+
 
     return data_processed
 
