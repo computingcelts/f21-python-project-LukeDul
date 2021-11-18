@@ -48,10 +48,51 @@ def read_file(file) :
     # returns a list with  all lines read from the input file
     return list_of_lines
 
+# city_data is a variable of type dictionary,
+#   where each element is a key : value pair,
+#         the key is one of the 13 metadata;
+#         the value of each key is a list containing the values read from the text file.
+#         Note that when building the dictionary some values have to be converted into integer.
+#
+# LIST OF KEYWORDS REQUIRED
+# date|time|day_of_week|hour_of_day|neighborhood|key_map|district|division|serv_type|queue|wait|days|origin
+#
+# EXAMPLE OF POPULATED DICTIONARY
+# city_data = { 'date':
+#                      [ '2016-08-23', '2016-08-22', '2016-10-20', . . .] ,
+#               'time' :
+#                       [ '20:40:25', '20:28:14', '12:47:28', . . .] ,
+#               'day_of_week' :
+#                       [ 2, 1, 4, . . .] ,
+#               'hour_of_day' :
+#                       [ 20, 20, 12, . . .] ,
+#               'neighborhood' :
+#                       [ 'SPRING BRANCH CENTRAL', 'MIDTOWN', 'INDEPENDENCE HEIGHTS', . . .] ,
+# ...
+
 # invoke this function in your test script to build the city_data dictionary
 # this function has to be invoked only once in your entire code
-def builds_city_data(data) :
-    data_processed = {}
+def builds_city_data(data) : # argument will be parser.input_data
+    data_processed = {
+        'date' : [],
+        'time' : [],
+        'day_of_week' : [],
+        'hour_of_day' : [],
+        'neighborhood' : [],
+        'key_map' : [],
+        'district' : [],
+        'division' : [],
+        'serv_type' : [],
+        'queue' : [],
+        'wait' : [],
+        'days' : [],
+        'origin' : [],
+    }
+
+    index = 0
+    for n in data:
+        data_processed['date'].append(data[index])
+        index += 13
 
     return data_processed
 
