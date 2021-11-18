@@ -16,7 +16,7 @@ def main():
     parser.input_data = cs.parser.read_file('coh_311_data.csv')
 
     # prints the content of the dictionary built by reading from the input file
-    pprint.pprint(parser.input_data, width=1)
+    #pprint.pprint(parser.input_data, width=1)
 
     # using the dictionary built in the previous step, builds a new dictionary
     parser.city_data = parser.builds_city_data(parser.input_data)
