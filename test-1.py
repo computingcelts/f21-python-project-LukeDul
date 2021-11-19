@@ -14,23 +14,18 @@ def main():
     # builds dictionary with documents and words in each document
     # use this for testing
     parser.input_data = cs.parser.read_file('coh_311_data.csv')
-
-    # prints the content of the dictionary built by reading from the input file
-    #pprint.pprint(parser.input_data, width=1)
+    # pprint.pprint(parser.input_data, width=1)
 
     # using the dictionary built in the previous step, builds a new dictionary
-    parser.city_data = parser.builds_city_data(parser.input_data)
-
-    # prints the dictionary built after invoking bi.build_doc_word_index
-    #pprint.pprint(parser.city_data, width=1)
-    #print(parser.city_data)
+    parser.city_data = parser.builds_city_data(parser.input_data)  # FINISHED
+    # pprint.pprint(parser.city_data, width=1)
 
     # using a previously created dictionary, builds a new dictionary
-    parser.city_counts = parser.builds_city_counts(parser.city_data)
+    parser.city_counts = parser.builds_city_counts(parser.city_data)  # INCOMPLETE
     pprint.pprint(parser.city_counts, width=1)
 
     # using a previously created dictionary, builds a new dictionary
-    parser.city_stats = parser.builds_city_stats(parser.input_data)
+    parser.city_stats = parser.builds_city_stats(parser.input_data)  # INCOMPLETE
     pprint.pprint(parser.city_stats, width=1)
 
     print('***************************************************')
@@ -66,6 +61,6 @@ def main():
     graphics.plot_service_by_hour(parser.city_counts, 11)
 
     # makes the the plot stop, comment this line when working on your code
-    graphics.render()
+    #graphics.render()
 
 main()
