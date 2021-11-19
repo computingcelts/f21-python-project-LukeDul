@@ -28,6 +28,8 @@ city_stats = {}
 
 # reads from a text file in disk and stores its content in a dictionary
 # DON'T MODIFY THIS FUNCTION
+
+
 def read_file(file) :
     list_of_lines = {}
 
@@ -70,9 +72,10 @@ def read_file(file) :
 #                       [ 'SPRING BRANCH CENTRAL', 'MIDTOWN', 'INDEPENDENCE HEIGHTS', . . .] ,
 # ...
 
+
 # invoke this function in your test script to build the city_data dictionary
 # this function has to be invoked only once in your entire code
-def builds_city_data(data) : # argument will be parser.input_data
+def builds_city_data(data):  # argument will be parser.input_data
     data_processed = {
         'date': [],
         'time': [],
@@ -89,18 +92,47 @@ def builds_city_data(data) : # argument will be parser.input_data
         'origin': [],
     }
 
-    list_length = 0
     for n in data:
-         list_length += 1
-
-    # for n in range(1, list_length+1, 13):
-    #     for i in range(1, 14)
-    #
-    data_processed['date'].append(data[[n]])
-
-
-
+        curr_list = data[n]
+        data_processed['date'].append(curr_list[0])
+    for n in data:
+        curr_list = data[n]
+        data_processed['time'].append(curr_list[1])
+    for n in data:
+        curr_list = data[n]
+        data_processed['day_of_week'].append(curr_list[2])
+    for n in data:
+        curr_list = data[n]
+        data_processed['hour_of_day'].append(curr_list[3])
+    for n in data:
+        curr_list = data[n]
+        data_processed['neighborhood'].append(curr_list[4])
+    for n in data:
+        curr_list = data[n]
+        data_processed['key_map'].append(curr_list[5])
+    for n in data:
+        curr_list = data[n]
+        data_processed['district'].append(curr_list[6])
+    for n in data:
+        curr_list = data[n]
+        data_processed['division'].append(curr_list[7])
+    for n in data:
+        curr_list = data[n]
+        data_processed['serv_type'].append(curr_list[8])
+    for n in data:
+        curr_list = data[n]
+        data_processed['queue'].append(curr_list[9])
+    for n in data:
+        curr_list = data[n]
+        data_processed['wait'].append(curr_list[10])
+    for n in data:
+        curr_list = data[n]
+        data_processed['days'].append(curr_list[11])
+    for n in data:
+        curr_list = data[n]
+        data_processed['origin'].append(curr_list[12])
     return data_processed
+
 
 # invoke this function in your test script to build the city_counts dictionary
 # this function has to be invoked only once in your entire code
@@ -108,6 +140,7 @@ def builds_city_counts(data) :
     data_processed = {}
 
     return data_processed
+
 
 # invoke this function in your test script to build the city_stats dictionary
 # this function has to be invoked only once in your entire code
