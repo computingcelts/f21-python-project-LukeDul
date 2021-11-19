@@ -75,6 +75,7 @@ def read_file(file) :
 
 # invoke this function in your test script to build the city_data dictionary
 # this function has to be invoked only once in your entire code
+# FINISHED, COULD BE OPTIMIZED BECAUSE IT HAS 12 FOR LOOPS
 def builds_city_data(data):  # argument will be parser.input_data
     data_processed = {
         'date': [],
@@ -131,20 +132,57 @@ def builds_city_data(data):  # argument will be parser.input_data
     for n in data:
         curr_list = data[n]
         data_processed['origin'].append(curr_list[12])
+
     return data_processed
 
 
 # invoke this function in your test script to build the city_counts dictionary
 # this function has to be invoked only once in your entire code
-def builds_city_counts(data) :
-    data_processed = {}
+# Example
+# city_counts = { 'serv_type':
+# { 'Nuisance On Property' : 26, 'Water Leak' : 20,
+# 'Sewer Wastewater' : 18, . . . },
+#               'queue' :
+#                     { 'NS_Dispatch' : 42,
+# 'PU_Water' : 36,
+# 'ROWM_StreetMain' : 29, . . ., . . .
+# }, 'origin' :
+#                     { 'Voice In' : 261,
+#                       'WAP' : 28,
+# 'WEB' : 10,
+# 'e-mail In' : 1, . . . },
+# ... }
+# KEYS
+# day_of_week, hour_of_day, neighborhood, district, division, serv_type, queue, wait, days,
+#
+def builds_city_counts(data):
+    data_processed = {
+        'day_of_week': {},
+        'hour_of_day': {},
+        'neighborhood': {},
+        'district': {},
+        'division': {},
+        'serv_type': {},
+        'queue': {},
+        'wait': {},
+        'days': {},
+        'origin': {},
+    }
+    for n in data:
+        if n != 'date' and n != 'time' and n != 'key_map':
+            w_list = data[n]
+            w_dict = data_processed[n]
+            print(w_list)
+            count = 0
+            for i in w_list:
+                w_dict[i] = count
 
     return data_processed
 
 
 # invoke this function in your test script to build the city_stats dictionary
 # this function has to be invoked only once in your entire code
-def builds_city_stats(data) :
+def builds_city_stats(data):
     data_processed = {}
 
     return data_processed
