@@ -155,7 +155,11 @@ def builds_city_data(data):  # argument will be parser.input_data
 # KEYS
 # day_of_week, hour_of_day, neighborhood, district, division, serv_type, queue, wait, days,
 #
+
+
+
 def builds_city_counts(data):
+
     data_processed = {
         'day_of_week': {},
         'hour_of_day': {},
@@ -173,13 +177,19 @@ def builds_city_counts(data):
             w_list = data[n]
             w_dict = data_processed[n]
             print(w_list)
+            print(w_dict)
 
             for i in w_list:
                 count = 0
-                for z in w_list:
-                    if w_list[i] == z:
-                        count += 1
                 w_dict[i] = count
+                # for z in w_dict:
+                #     counted = w_dict[i]
+                #     print(w_dict[i])
+                #     if counted == z:
+                #         count+=1
+                # print(count)
+            print(w_dict)
+
 
 
     return data_processed
