@@ -173,9 +173,14 @@ def builds_city_counts(data):
             w_list = data[n]
             w_dict = data_processed[n]
             print(w_list)
-            count = 0
+
             for i in w_list:
+                count = 0
+                for z in w_list:
+                    if w_list[i] == z:
+                        count += 1
                 w_dict[i] = count
+
 
     return data_processed
 
