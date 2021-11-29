@@ -189,9 +189,6 @@ def builds_city_counts(data):
                 #         count+=1
                 # print(count)
             print(w_dict)
-
-
-
     return data_processed
 
 
