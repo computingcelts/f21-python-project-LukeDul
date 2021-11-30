@@ -18,6 +18,9 @@ city_data = {}
 # where the key is a unique information from the dataset for that metadata and
 # its corresponding value is a count of how many times, that information appears
 # in the dataset.
+
+
+
 city_counts = {}
 
 # city_stats is a variable of type dictionary (a nested dictionary), where the key is
@@ -157,7 +160,6 @@ def builds_city_data(data):  # argument will be parser.input_data
 #
 
 
-
 def builds_city_counts(data):
 
     data_processed = {
@@ -172,23 +174,25 @@ def builds_city_counts(data):
         'days': {},
         'origin': {},
     }
+
+
     for n in data:
         if n != 'date' and n != 'time' and n != 'key_map':
-            w_list = data[n]
-            w_dict = data_processed[n]
-            print(w_list)
-            print(w_dict)
+            temp_list = data[n]  # [ 2, 1, 4, . . .] ,
+            temp_dictionary = data_processed[n]
 
-            for i in w_list:
+            def count_data(data_name):
                 count = 0
-                w_dict[i] = count
-                # for z in w_dict:
-                #     counted = w_dict[i]
-                #     print(w_dict[i])
-                #     if counted == z:
-                #         count+=1
-                # print(count)
-            print(w_dict)
+                for z in temp_list:
+                    if z == data_name:
+                        count += 1
+                return count
+
+            for i in temp_list:
+                # print('i', i)
+                temp_dictionary[i] = count_data(i)  # creates a new key with a value of the amount of times that key is in the list
+
+            print(temp_dictionary)
     return data_processed
 
 

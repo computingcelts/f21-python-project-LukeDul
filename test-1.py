@@ -14,11 +14,11 @@ def main():
     # builds dictionary with documents and words in each document
     # use this for testing
     parser.input_data = cs.parser.read_file('coh_311_data.csv')
-    # pprint.pprint(parser.input_data, width=1)
+    #pprint.pprint(parser.input_data, width=1)
 
     # using the dictionary built in the previous step, builds a new dictionary
     parser.city_data = parser.builds_city_data(parser.input_data)  # FINISHED
-    # pprint.pprint(parser.city_data, width=1)
+   # pprint.pprint(parser.city_data, width=1)
 
     # using a previously created dictionary, builds a new dictionary
     parser.city_counts = parser.builds_city_counts(parser.city_data)  # INCOMPLETE
