@@ -7,6 +7,8 @@ import cohstats.parser as parser
 def compute_average(data, metadata, column, category) :
     total = 0.0
     count = 1
+    for i in  data:
+
 
     return total / count
 
