@@ -3,13 +3,35 @@ import cohstats.parser as parser
 #################
 # Given a metadata and column as arguments, computes the average of the values for a category
 # Returns: the average as a float number
+# print(stats.compute_average(parser.city_counts, 'day_of_week', 'division', '311 Call Handling'))
+# In english: compute the average of the 'day_of_week' values that
+# are on the same line as all of the '311 Call Handling' values.
+#
+
 #################
+# print(stats.compute_average(parser.city_data, 'day_of_week', 'division', '311 Call Handling'))
 def compute_average(data, metadata, column, category) :
     total = 0.0
-    count = 1
-    for i in  data:
+    count = 0
 
-
+    indexer = 0
+    for z in data:
+        if z == column:
+            print(z)
+            for i in data[z]: # 'division'
+                indexer += 1
+                if i == category: #'311 Call Handling'
+                    print('INDEX:', indexer)
+                    counter = 1
+                    for h in data[metadata]:
+                        if indexer == counter:
+                            print(h)
+                            total += h
+                            count += 1
+                        counter += 1
+    print('Total: ', total)
+    print('Count: ', count)
+    print('Average: ', total / count)
     return total / count
 
 #################

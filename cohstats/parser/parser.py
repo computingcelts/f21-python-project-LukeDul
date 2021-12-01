@@ -161,7 +161,6 @@ def builds_city_data(data):  # argument will be parser.input_data
 
 
 def builds_city_counts(data):
-
     data_processed = {
         'day_of_week': {},
         'hour_of_day': {},
@@ -174,8 +173,6 @@ def builds_city_counts(data):
         'days': {},
         'origin': {},
     }
-
-
     for n in data:
         if n != 'date' and n != 'time' and n != 'key_map':
             temp_list = data[n]  # [ 2, 1, 4, . . .] ,
@@ -189,10 +186,9 @@ def builds_city_counts(data):
                 return count
 
             for i in temp_list:
-                # print('i', i)
                 temp_dictionary[i] = count_data(i)  # creates a new key with a value of the amount of times that key is in the list
 
-            print(temp_dictionary)
+            #print(temp_dictionary)
     return data_processed
 
 

@@ -21,11 +21,11 @@ def main():
     pprint.pprint(parser.city_data, width=1)
 
     # using a previously created dictionary, builds a new dictionary
-    parser.city_counts = parser.builds_city_counts(parser.city_data)  # INCOMPLETE
-    pprint.pprint(parser.city_counts, width=1)
+    parser.city_counts = parser.builds_city_counts(parser.city_data)  # FINISHED
+    #pprint.pprint(parser.city_counts, width=1)
 
     # using a previously created dictionary, builds a new dictionary
-    parser.city_stats = parser.builds_city_stats(parser.input_data)  # INCOMPLETE
+    parser.city_stats = parser.builds_city_stats(parser.input_data)  # INCOMPLETE FINISH AFTER STATS IS DONE
     pprint.pprint(parser.city_stats, width=1)
 
     print('***************************************************')
@@ -37,7 +37,7 @@ def main():
     # argument.
     # In this examples the parser.city_counts has to be replace with the container you believe is the
     # best suited to compute that statistic
-    print(stats.compute_average(parser.city_counts, 'day_of_week', 'division', '311 Call Handling'))
+    print(stats.compute_average(parser.city_data, 'wait', 'division', '311 Call Handling'))
     print(stats.compute_stdev(parser.city_counts, 'day_of_week', 'division', '311 Call Handling'))
     print(stats.greater_than(parser.city_counts, 'day_of_week', 'division', 4))
     print(stats.less_than(parser.city_counts, 'day_of_week', 'division', 2))
