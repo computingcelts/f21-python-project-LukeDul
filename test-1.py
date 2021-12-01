@@ -37,7 +37,7 @@ def main():
     # argument.
     # In this examples the parser.city_counts has to be replace with the container you believe is the
     # best suited to compute that statistic
-    print(stats.compute_average(parser.city_data, 'wait', 'division', '311 Call Handling'))
+    print(stats.compute_average(parser.city_data, 'wait', 'queue', '311_Seniors'))
     print(stats.compute_stdev(parser.city_counts, 'day_of_week', 'division', '311 Call Handling'))
     print(stats.greater_than(parser.city_counts, 'day_of_week', 'division', 4))
     print(stats.less_than(parser.city_counts, 'day_of_week', 'division', 2))

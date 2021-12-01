@@ -104,10 +104,10 @@ def builds_city_data(data):  # argument will be parser.input_data
         data_processed['time'].append(curr_list[1])
     for n in data:
         curr_list = data[n]
-        data_processed['day_of_week'].append(curr_list[2])
+        data_processed['day_of_week'].append(int(curr_list[2]))
     for n in data:
         curr_list = data[n]
-        data_processed['hour_of_day'].append(curr_list[3])
+        data_processed['hour_of_day'].append(int(curr_list[3]))
     for n in data:
         curr_list = data[n]
         data_processed['neighborhood'].append(curr_list[4])
@@ -128,10 +128,10 @@ def builds_city_data(data):  # argument will be parser.input_data
         data_processed['queue'].append(curr_list[9])
     for n in data:
         curr_list = data[n]
-        data_processed['wait'].append(curr_list[10])
+        data_processed['wait'].append(int(curr_list[10]))
     for n in data:
         curr_list = data[n]
-        data_processed['days'].append(curr_list[11])
+        data_processed['days'].append(int(curr_list[11]))
     for n in data:
         curr_list = data[n]
         data_processed['origin'].append(curr_list[12])
