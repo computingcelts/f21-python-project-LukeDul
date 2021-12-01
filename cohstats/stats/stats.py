@@ -57,6 +57,7 @@ def compute_stdev(data, metadata, column, category):
             # print(z)
             for i in data[z]:  # 'division'
                 indexer += 1
+
                 if i == category:  # '311 Call Handling'
                     # print('INDEX:', indexer)
                     counter = 1
