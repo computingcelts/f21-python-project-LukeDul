@@ -18,14 +18,14 @@ def main():
 
     # using the dictionary built in the previous step, builds a new dictionary
     parser.city_data = parser.builds_city_data(parser.input_data)  # FINISHED
-    pprint.pprint(parser.city_data, width=1)
+    #pprint.pprint(parser.city_data, width=1)
 
     # using a previously created dictionary, builds a new dictionary
     parser.city_counts = parser.builds_city_counts(parser.city_data)  # FINISHED
     #pprint.pprint(parser.city_counts, width=1)
 
     # using a previously created dictionary, builds a new dictionary
-    parser.city_stats = parser.builds_city_stats(parser.input_data)  # INCOMPLETE FINISH AFTER STATS IS DONE
+    parser.city_stats = parser.builds_city_stats(parser.city_data)  # INCOMPLETE FINISH AFTER STATS IS DONE
     pprint.pprint(parser.city_stats, width=1)
 
     print('***************************************************')
@@ -39,8 +39,8 @@ def main():
     # best suited to compute that statistic
     print(stats.compute_average(parser.city_data, 'day_of_week', 'division', '311 Call Handling'))
     print(stats.compute_stdev(parser.city_data, 'day_of_week', 'division', '311 Call Handling'))
-    print(stats.greater_than(parser.city_counts, 'day_of_week', 'division', 4))
-    print(stats.less_than(parser.city_counts, 'day_of_week', 'division', 2))
+    print(stats.greater_than(parser.city_data,  'division', 4))
+    print(stats.less_than(parser.city_data,  'division', 4))
 
     print('***************************************************')
     print('graphics')
@@ -49,7 +49,7 @@ def main():
     # these are some plain examples on how to draw graphics on the screen using the turtle graphics package
     graphics.draw_text('Click anywhere on the window to close turtle graphics', 10, 10)
     graphics.draw_bar(5, 50, 200, 5, 'blue')
-    graphics.draw_bars(20, 50, 'red', total_bars = 5)
+    graphics.draw_bars(20, 50, 'red', total_bars=5)
 
     graphics.draw_text('These are some examples on how to use turtle graphics', 10, 550)
 
@@ -61,6 +61,6 @@ def main():
     graphics.plot_service_by_hour(parser.city_counts, 11)
 
     # makes the the plot stop, comment this line when working on your code
-    #graphics.render()
+    # graphics.render()
 
 main()
