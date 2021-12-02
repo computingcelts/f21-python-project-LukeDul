@@ -205,22 +205,19 @@ def builds_city_stats(data):
         'day_of_week': {
             'avg': stats.compute_average(data, 'day_of_week', 'day_of_week', 'day_of_week'),
             'stdev': stats.compute_stdev(data, 'day_of_week', 'day_of_week', 'day_of_week'),
-            'var': len(data['day_of_week']) - (stats.compute_average(data, 'day_of_week', 'day_of_week', 'day_of_week'))
         },
         'hour_of_day': {
             'avg': stats.compute_average(data, 'hour_of_day', 'hour_of_day', 'hour_of_day'),
             'stdev': stats.compute_stdev(data, 'hour_of_day', 'hour_of_day', 'hour_of_day'),
-            'var': 0
+
         },
         'wait': {
             'avg': stats.compute_average(data, 'wait', 'wait', 'wait'),
             'stdev': stats.compute_stdev(data, 'wait', 'wait', 'wait'),
-            'var': 0
         },
         'days': {
             'avg': stats.compute_average(data, 'days', 'days', 'days'),
             'stdev': stats.compute_stdev(data, 'days', 'days', 'days'),
-            'var': 0
         }
     }
     print(data['day_of_week'])
