@@ -1,4 +1,5 @@
 import string
+import cohstats.stats as stats
 
 # city_data is a variable of type dictionary, where each element is a key : value pair,
 # the key is an integer representing the line number in the text file; the value of each key
@@ -200,21 +201,28 @@ def builds_city_counts(data):
 # invoke this function in your test script to build the city_stats dictionary
 # this function has to be invoked only once in your entire code
 def builds_city_stats(data):
-    data_processed = {}
-    #     'day_of_week': {
-    #         'avg': 0, 'stdev': 0, 'var': 0
-    #     },
-    #     'hour_of_day': {
-    #         'avg': 0, 'stdev': 0, 'var': 0
-    #     },
-    #     'wait': {
-    #         'avg': 0, 'stdev': 0, 'var': 0
-    #     },
-    #     'days': {
-    #         'avg': 0, 'stdev': 0, 'var': 0
-    #     }
-    # }
-    # for n in data['day_of_week']:
-    #     n += 1
-    #     # code here
+    data_processed = {
+        'day_of_week': {
+            'avg': stats.compute_average(data, 'day_of_week', 'day_of_week', 'day_of_week'),
+            'stdev': stats.compute_stdev(data, 'day_of_week', 'day_of_week', 'day_of_week'),
+            'var': len(data['day_of_week']) - (stats.compute_average(data, 'day_of_week', 'day_of_week', 'day_of_week'))
+        },
+        'hour_of_day': {
+            'avg': stats.compute_average(data, 'hour_of_day', 'hour_of_day', 'hour_of_day'),
+            'stdev': stats.compute_stdev(data, 'hour_of_day', 'hour_of_day', 'hour_of_day'),
+            'var': 0
+        },
+        'wait': {
+            'avg': stats.compute_average(data, 'wait', 'wait', 'wait'),
+            'stdev': stats.compute_stdev(data, 'wait', 'wait', 'wait'),
+            'var': 0
+        },
+        'days': {
+            'avg': stats.compute_average(data, 'days', 'days', 'days'),
+            'stdev': stats.compute_stdev(data, 'days', 'days', 'days'),
+            'var': 0
+        }
+    }
+    print(data['day_of_week'])
+
     return data_processed
