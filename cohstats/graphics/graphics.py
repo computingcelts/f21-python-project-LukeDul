@@ -59,7 +59,7 @@ def plot_top_k_service_types(data, metadata, k):
         unsorted_list.append(value)
 
     sorted_list = sorted(unsorted_list, reverse=True)
-    # print('sorted', sorted_list)
+    print('sorted', sorted_list)
 
     final_list = []
     index = 0
@@ -78,14 +78,66 @@ def plot_top_k_service_types(data, metadata, k):
         distance += 20
 
 
-# def plot_bottom_k_service_types(data, metadata, k):
-#     draw_text('Displays graph: plot_bottom_k_service_types', 10, 500)
-#
-#
-# def plot_service_by_day(data, day):
-#     # draw_text('Displays graph: plot_service_by_day', 10, 480)
-#
-#
-# def plot_service_by_hour(data, hour):
-#     # draw_text('Displays graph: plot_service_by_hour', 10, 460)
+def plot_bottom_k_service_types(data, metadata, k):
+    draw_text('Displays graph: plot_bottom_k_service_types', 10, 500)
+    draw_text('Displays graph: plot_top_k_service_types', 10, 650)
+    unsorted_list = []
+    # print('unsorted', unsorted_list)
+
+    for key, value in data[metadata].items():
+        unsorted_list.append(value)
+
+    sorted_list = sorted(unsorted_list)
+    # print('sorted', sorted_list)
+
+    final_list = []
+    index = 0
+    for i in sorted_list:
+        if index < k:
+            final_list.append(i)
+        index += 1
+
+    print(final_list)
+
+    bars = 0
+    index_2 = 0
+    distance = 20
+    while bars < k:
+        try:
+            draw_bar(distance, 400, final_list[index_2], 5, 'red')
+        except IndexError:
+            print('Value is too big')
+            break
+        index_2 += 1
+        bars += 1
+        distance += 20
+
+def plot_service_by_day(data, day):
+    draw_text('Displays graph: plot_service_by_day', 10, 350)
+
+    unsorted_list = []
+
+    for key, value in data['day_of_week'].items():
+        unsorted_list.append(value)
+
+    print(unsorted_list, 'unsorted')
+
+    print(unsorted_list[day-1])
+
+    draw_bar(20, 300, unsorted_list[day-1], 5, 'blue')
+
+
+def plot_service_by_hour(data, hour):
+    draw_text('Displays graph: plot_service_by_hour', 10, 250)
+
+    unsorted_list = []
+
+    for key, value in data['hour_of_day'].items():
+        unsorted_list.append(value)
+
+    print(unsorted_list, 'unsorted')
+
+    print(unsorted_list[hour])
+
+    draw_bar(20, 200, unsorted_list[hour], 5, 'blue')
 
