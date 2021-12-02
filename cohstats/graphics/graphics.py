@@ -53,6 +53,24 @@ def render() :
 # You have to implement the following 4 functions
 def plot_top_k_service_types(data, metadata, k):
     draw_text('Displays graph: plot_top_k_service_types', 10, 520)
+    unsorted_list = []
+    # print('unsorted', unsorted_list)
+
+    for key, value in data[metadata].items():
+        unsorted_list.append(value)
+
+    sorted_list = sorted(unsorted_list, reverse=True)
+    # print('sorted', sorted_list)
+
+    final_list = []
+    index = 0
+    for i in sorted_list:
+        if index < k:
+            final_list.append(i)
+        index += 1
+    # print(final_list)
+
+
 
 
 def plot_bottom_k_service_types(data, metadata, k):
