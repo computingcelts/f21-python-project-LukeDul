@@ -7,12 +7,14 @@ print('Window height:' + str(new_x_position))
 print('Window width:' + str(new_y_position))
 turtle.tracer(0, 0)
 
+
 # draws a text on the screen
 def draw_text(the_text, x, y):
     turtle.penup()
     turtle.goto(new_x_position + x, new_y_position + y)
     turtle.pendown()
     turtle.write(the_text, True, align="left", font=("Arial", 20, "normal"))
+
 
 # draws a bar on the screen
 def draw_bar(x, y, height, width, color):
@@ -35,7 +37,6 @@ def draw_bar(x, y, height, width, color):
     turtle.end_fill()
 
 
-
 def draw_bars(x, y, color, width=10, gap=5,  total_bars=1):
     i = 0
     while i < total_bars :
@@ -43,16 +44,18 @@ def draw_bars(x, y, color, width=10, gap=5,  total_bars=1):
         draw_bar(x + (i*(width + gap)), 50, 400, width, color)
         i += 1
 
+
 def render() :
     turtle.update()  # Render image
     turtle.exitonclick()  # Wait for user's mouse click
+
 
 # You have to implement the following 4 functions
 def plot_top_k_service_types(data, metadata, k):
     draw_text('Displays graph: plot_top_k_service_types', 10, 520)
 
 
-def plot_bottom_k_service_types (data, metadata, k):
+def plot_bottom_k_service_types(data, metadata, k):
     draw_text('Displays graph: plot_bottom_k_service_types', 10, 500)
 
 

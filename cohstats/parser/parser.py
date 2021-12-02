@@ -200,21 +200,21 @@ def builds_city_counts(data):
 # invoke this function in your test script to build the city_stats dictionary
 # this function has to be invoked only once in your entire code
 def builds_city_stats(data):
-    data_processed = {
-        'day_of_week': {
-            'avg': 0, 'stdev': 0, 'var': 0
-        },
-        'hour_of_day': {
-            'avg': 0, 'stdev': 0, 'var': 0
-        },
-        'wait': {
-            'avg': 0, 'stdev': 0, 'var': 0
-        },
-        'days': {
-            'avg': 0, 'stdev': 0, 'var': 0
-        }
-    }
-    for n in data['day_of_week']:
-        n += 1
-        # code here
+    data_processed = {}
+    #     'day_of_week': {
+    #         'avg': 0, 'stdev': 0, 'var': 0
+    #     },
+    #     'hour_of_day': {
+    #         'avg': 0, 'stdev': 0, 'var': 0
+    #     },
+    #     'wait': {
+    #         'avg': 0, 'stdev': 0, 'var': 0
+    #     },
+    #     'days': {
+    #         'avg': 0, 'stdev': 0, 'var': 0
+    #     }
+    # }
+    # for n in data['day_of_week']:
+    #     n += 1
+    #     # code here
     return data_processed
