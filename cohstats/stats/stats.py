@@ -15,25 +15,35 @@ def compute_average(data, metadata, column, category): # note that metadata refe
     total = 0.0
     count = 0
     indexer = 0
+
+    def average_list(arr):
+        summation = 0.0
+
+        for element in arr:
+            summation += element
+
+        return summation / len(arr)
+
     if (column == metadata) and (category == metadata):
-        for n in data[metadata]:
-            count += 1
-            total += n
-        return total / count
+        return average_list(data[metadata])
 
     else:
-        for z in data:
-            if z == column:
-                for i in data[z]:  # 'division'
-                    indexer += 1
-                    if i == category:  # '311 Call Handling'
-                        counter = 1
-                        for h in data[metadata]:
-                            if indexer == counter:
-                                total += h
-                                count += 1
-                            counter += 1
-    return total / count
+        temp_list = []
+        for i in range(len(data[column])):
+            if data[column][i] == category:
+                temp_list.append(data[metadata][i])
+
+        # for i in data[column]:  # 'division'
+        #     indexer += 1
+        #     if i == category:  # '311 Call Handling'
+        #         counter = 1
+        #         for h in data[metadata]:
+        #             if indexer == counter:
+        #                 total += h
+        #                 count += 1
+        #             counter += 1
+
+    return average_list(temp_list)
 
 
 #################
@@ -58,23 +68,18 @@ def compute_stdev(data, metadata, column, category): # note that metadata refers
         result = math.sqrt(sum / (count - 1))
 
     else:
-        for z in data:
-            if z == column:
-                # print(z)
-                for i in data[z]:  # 'division'
-                    indexer += 1
-                    if i == category:  # '311 Call Handling'
-                        # print('INDEX:', indexer)
-                        counter = 1
-                        for h in data[metadata]:
-                            if indexer == counter:
-                                # print('Variance', h - average)
-                                # print('Squared', (h - average)**2)
-                                sum += ((h - average) ** 2)
-                                # print('Sum: ', sum)
-                                total += h
-                                count += 1
-                            counter += 1
+        for i in data[column]:  # 'division'
+            indexer += 1
+            if i == category:  # '311 Call Handling'
+                # print('INDEX:', indexer)
+                counter = 1
+                for h in data[metadata]:
+                    if indexer == counter:
+                        sum += ((h - average) ** 2)
+                        # print('Sum: ', sum)
+                        total += h
+                        count += 1
+                    counter += 1
         result = math.sqrt(sum / (count - 1))
 
     return result
