@@ -175,22 +175,19 @@ def builds_city_counts(data):
         'days': {},
         'origin': {},
     }
+
     for n in data:
         if n != 'date' and n != 'time' and n != 'key_map':
             temp_list = data[n]  # [ 2, 1, 4, . . .] ,
             temp_dictionary = data_processed[n]
 
-            def count_data(data_name):
-                count = 0
-                for z in temp_list:
-                    if z == data_name:
-                        count += 1
-                return count
-
             for i in temp_list:
-                temp_dictionary[i] = count_data(i)  # creates a new key with a value of the amount of times that key is in the list
-
-            #print(temp_dictionary)
+                # increment by one if seen
+                if i not in temp_dictionary:
+                    temp_dictionary[i] = 1
+                # initialize to 1 if not seen before
+                else:
+                    temp_dictionary[i] += 1
     return data_processed
 
 
