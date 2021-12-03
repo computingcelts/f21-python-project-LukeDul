@@ -95,25 +95,10 @@ def compute_stdev(data, metadata, column, category): # note that metadata refers
 # source: https://stackoverflow.com/questions/12897374/get-unique-values-from-a-list-in-python
 def greater_than(data, metadata, limit):  # column is redundant
     result = []
-    unique = {}
-    for n in data[metadata]:
-        if n not in unique:
-            unique[n] = 0
-    # print(unique)
 
-    count = 0
-    for n in unique:
-        for i in data[metadata]:
-            if i == n:
-                count += 1
-
-        unique[n] = count
-        count = 0
-
-    for x, y in unique.items():
+    for x, y in data[metadata].items():
         if y > limit:
             result.append(x)
-    # print(unique)
     return result
 
 
@@ -124,22 +109,8 @@ def greater_than(data, metadata, limit):  # column is redundant
 #################
 def less_than(data, metadata, limit):
     result = []
-    unique = {}
-    for n in data[metadata]:
-        if n not in unique:
-            unique[n] = 0
-    # print(unique)
 
-    count = 0
-    for n in unique:
-        for i in data[metadata]:
-            if i == n:
-                count += 1
-        unique[n] = count
-        count = 0
-
-    for x, y in unique.items():
+    for x, y in data[metadata].items():
         if y < limit:
             result.append(x)
-    # print(unique)
     return result
