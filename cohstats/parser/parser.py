@@ -100,41 +100,17 @@ def builds_city_data(data):  # argument will be parser.input_data
     for n in data:
         curr_list = data[n]
         data_processed['date'].append(curr_list[0])
-    for n in data:
-        curr_list = data[n]
         data_processed['time'].append(curr_list[1])
-    for n in data:
-        curr_list = data[n]
         data_processed['day_of_week'].append(int(curr_list[2]))
-    for n in data:
-        curr_list = data[n]
         data_processed['hour_of_day'].append(int(curr_list[3]))
-    for n in data:
-        curr_list = data[n]
         data_processed['neighborhood'].append(curr_list[4])
-    for n in data:
-        curr_list = data[n]
         data_processed['key_map'].append(curr_list[5])
-    for n in data:
-        curr_list = data[n]
         data_processed['district'].append(curr_list[6])
-    for n in data:
-        curr_list = data[n]
         data_processed['division'].append(curr_list[7])
-    for n in data:
-        curr_list = data[n]
         data_processed['serv_type'].append(curr_list[8])
-    for n in data:
-        curr_list = data[n]
         data_processed['queue'].append(curr_list[9])
-    for n in data:
-        curr_list = data[n]
         data_processed['wait'].append(int(curr_list[10]))
-    for n in data:
-        curr_list = data[n]
         data_processed['days'].append(int(curr_list[11]))
-    for n in data:
-        curr_list = data[n]
         data_processed['origin'].append(curr_list[12])
 
     return data_processed
