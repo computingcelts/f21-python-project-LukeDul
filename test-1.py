@@ -14,11 +14,11 @@ def main():
     # builds dictionary with documents and words in each document
     # use this for testing
     parser.input_data = cs.parser.read_file('coh_311_data.csv')
-    #pprint.pprint(parser.input_data, width=1)
+    pprint.pprint(parser.input_data, width=1)
 
     # using the dictionary built in the previous step, builds a new dictionary
     parser.city_data = parser.builds_city_data(parser.input_data)  # FINISHED
-    #pprint.pprint(parser.city_data, width=1)
+    pprint.pprint(parser.city_data, width=1)
 
     # using a previously created dictionary, builds a new dictionary
     parser.city_counts = parser.builds_city_counts(parser.city_data)  # FINISHED
@@ -26,7 +26,7 @@ def main():
 
     # using a previously created dictionary, builds a new dictionary
     parser.city_stats = parser.builds_city_stats(parser.city_data)  # INCOMPLETE FINISH AFTER STATS IS DONE
-    # pprint.pprint(parser.city_stats, width=1)
+    pprint.pprint(parser.city_stats, width=1)
 
     print('***************************************************')
     print('computing stats')
@@ -37,10 +37,10 @@ def main():
     # argument.
     # In this examples the parser.city_counts has to be replace with the container you believe is the
     # best suited to compute that statistic
-    # print(stats.compute_average(parser.city_data, 'day_of_week', 'division', '311 Call Handling'))
-    # print(stats.compute_stdev(parser.city_data, 'day_of_week', 'division', '311 Call Handling'))
-    # print(stats.greater_than(parser.city_data,  'division', 4))
-    # print(stats.less_than(parser.city_data,  'division', 4))
+    print(stats.compute_average(parser.city_data, 'day_of_week', 'division', '311 Call Handling'))
+    print(stats.compute_stdev(parser.city_data, 'day_of_week', 'division', '311 Call Handling'))
+    print(stats.greater_than(parser.city_data,  'division', 4))
+    print(stats.less_than(parser.city_data,  'division', 4))
 
     print('***************************************************')
     print('graphics')
