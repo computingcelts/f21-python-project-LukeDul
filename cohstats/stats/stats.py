@@ -90,9 +90,10 @@ def compute_stdev(data, metadata, column, category): # note that metadata refers
 # column with values greater than the value passed to the parameter limit
 # Returns: A list of strings from the column whose values are greater than limit
 
-# print(stats.greater_than(parser.city_counts, 'division', 4))
+# Find all unique entries in the metadata(column) that occur more than the limit and return them in a list.
+# If the function is passed the arguments 'division' and 4 it would find all items that are in the column more than 4 times.
+# It should return: ['311 Call Handling', 'Collections', 'Forestry', 'Investigations', 'Parking Enforcement', 'Parking Meter Maintenance', 'PDS Planning Development Services', 'PU Public Utilities', 'Recycling', 'Street and Drainage', 'Traffic Operations']
 #################
-# source: https://stackoverflow.com/questions/12897374/get-unique-values-from-a-list-in-python
 def greater_than(data, metadata, limit):  # column is redundant
     result = []
 
