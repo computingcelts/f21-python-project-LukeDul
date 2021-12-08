@@ -59,7 +59,7 @@ def plot_top_k_service_types(data, metadata, k):
         unsorted_list.append(value)
 
     sorted_list = sorted(unsorted_list, reverse=True)
-    print('sorted', sorted_list)
+    # print('sorted', sorted_list)
 
     final_list = []
     index = 0
@@ -67,7 +67,7 @@ def plot_top_k_service_types(data, metadata, k):
         if index < k:
             final_list.append(i)
         index += 1
-    print(final_list)
+    # print(final_list)
     bars = 0
     index_2 = 0
     distance = 20
@@ -97,7 +97,7 @@ def plot_bottom_k_service_types(data, metadata, k):
             final_list.append(i)
         index += 1
 
-    print(final_list)
+    # print(final_list)
 
     bars = 0
     index_2 = 0
@@ -120,9 +120,9 @@ def plot_service_by_day(data, day):
     for key, value in data['day_of_week'].items():
         unsorted_list.append(value)
 
-    print(unsorted_list, 'unsorted')
-
-    print(unsorted_list[day-1])
+    # print(unsorted_list, 'unsorted')
+    #
+    # print(unsorted_list[day-1])
 
     draw_bar(20, 300, unsorted_list[day-1], 5, 'blue')
 
@@ -135,9 +135,9 @@ def plot_service_by_hour(data, hour):
     for key, value in data['hour_of_day'].items():
         unsorted_list.append(value)
 
-    print(unsorted_list, 'unsorted')
-
-    print(unsorted_list[hour])
+    # print(unsorted_list, 'unsorted')
+    #
+    # print(unsorted_list[hour])
 
     draw_bar(20, 200, unsorted_list[hour], 5, 'blue')
 
